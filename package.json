@@ -1,0 +1,27 @@
+{
+  "name": "netuce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "nodemon",
+    "build:css": "postcss app/assets/css/index.css -o app/public/build/css/index.css"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "app/assets",
+      "app/views",
+      "server"
+    ],
+    "ext": "css,js,html",
+    "exec": "yarn build:css && node server/index.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.3.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.7"
+  }
+}
